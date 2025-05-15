@@ -1,24 +1,23 @@
+package com.NextUp.nextup.model;
+
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-
 
 @Entity
 public class Notification {
-    @Id @GeneratedValue
-    private Long id;
 
-    private String message;
-    private boolean isRead = false;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @ManyToOne
     private User recipient;
 
-    private LocalDateTime timestamp = LocalDateTime.now();
+    private String message;
+
+    private boolean isRead;
+
+    private LocalDateTime timestamp;
+
+    // Getters and setters below...
 }

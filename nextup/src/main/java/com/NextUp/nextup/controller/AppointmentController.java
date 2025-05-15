@@ -1,6 +1,16 @@
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.NextUp.nextup.model.Appointment;
+import com.NextUp.nextup.services.AppointmentService;
 import org.springframework.stereotype.Component;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -8,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @RequestMapping("/api/appointments")
 public class AppointmentController {
 
-    @Autowired private AppointmentService appointmentService;
+    @Autowired private Appointment appointmentService;
 
     @PostMapping("/book")
     public ResponseEntity<Appointment> bookAppointment(

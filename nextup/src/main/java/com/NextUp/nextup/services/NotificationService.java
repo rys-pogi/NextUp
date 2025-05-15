@@ -2,35 +2,35 @@ import org.springframework.stereotype.Service;
 import org.springframework.stereotype.Component;
 import org.springframework.boot.CommandLineRunner;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.management.Notification;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import com.NextUp.nextup.model.Notification;
 import com.NextUp.nextup.model.User;
-import  com.NextUp.nextup.repository.NotificationRepository;
+import com.NextUp.nextup.repository.NotificationRepository;
+
+
 
 @Service
 public class NotificationService {
-    @Autowired private NotificationRepository notificationRepo;
+    @Autowired    
+    private final NotificationRepository notificationRepo;
 
-    public void send(User recipient, String message) {
-        Notification note = new Notification();
-        note.setRecipient(recipient);
-        note.setMessage(message);
-        note.setIsRead(false);
-        note.setTimestamp(LocalDateTime.now());
-        notificationRepo.save(note);
-    }
-
-    public List<Notification> getNotifications(Long userId) {
-        return notificationRepo.findByRecipientIdOrderByTimestampDesc(userId);
+    public NotificationService(NotificationRepository notificationRepo) {
+        this.notificationRepo = notificationRepo;
     }
 
     public void markAsRead(Long notificationId) {
-        Notification note = notificationRepo.findById(notificationId).orElseThrow();
-        note.setIsRead(true);
-        notificationRepo.save(note);
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'markAsRead'");
     }
+
+    public Object getNotifications(Long userId) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getNotifications'");
+    }
+
+   
 }
