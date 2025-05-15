@@ -1,13 +1,13 @@
+package com.NextUp.nextup.model;
+
 import java.time.LocalDate;
-import java.time.LocalTime;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+
 
 
 @Entity
@@ -15,11 +15,6 @@ public class TimeSlot {
     @Id @GeneratedValue
     private Long id;
 
-    private LocalDate date;
-    private LocalTime startTime;
-    private LocalTime endTime;
-
-    private boolean isBooked = false;
 
     @ManyToOne
     private User staff; // Only staff can have timeslots
@@ -38,4 +33,20 @@ public class TimeSlot {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setBooked'");
     }
+
+    public void setDate(LocalDate date2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setDate'");
+    }
+
+    public void setStartTime(Object staff2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setStartTime'");
+    }
+
+    public Long getId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+    }
+
 }

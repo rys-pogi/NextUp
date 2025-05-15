@@ -1,14 +1,15 @@
-import org.springframework.stereotype.Service;
+package com.NextUp.nextup.controller;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.stereotype.Component;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.http.ResponseEntity;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,19 +38,22 @@ public class TimeSlotController {
 
     @Data
     static class TimeSlotRequest {
+        @SuppressWarnings("unused")
         private LocalDate date;
+        @SuppressWarnings("unused")
         private LocalTime startTime;
+        @SuppressWarnings("unused")
         private LocalTime endTime;
         public LocalDate getDate() {
-            // TODO Auto-generated method stub
+
             throw new UnsupportedOperationException("Unimplemented method 'getDate'");
         }
         public LocalTime getEndTime() {
-            // TODO Auto-generated method stub
+    
             throw new UnsupportedOperationException("Unimplemented method 'getEndTime'");
         }
         public LocalTime getStartTime() {
-            // TODO Auto-generated method stub
+
             throw new UnsupportedOperationException("Unimplemented method 'getStartTime'");
         }
     }

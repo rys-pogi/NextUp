@@ -20,10 +20,6 @@ public class Appointment {
     @OneToOne
     private TimeSlot timeSlot;
 
-    private String status; // PENDING, APPROVED, DECLINED, CANCELLED
-
-    private LocalDateTime createdAt = LocalDateTime.now();
-
     public void setStudent(User student2) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setStudent'");
@@ -47,6 +43,36 @@ public class Appointment {
     public void setCreatedAt(LocalDateTime now) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setCreatedAt'");
+    }
+
+    public Object declineAppointment(Long id2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'declineAppointment'");
+    }
+
+    public Object getStudentAppointments(Long id2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getStudentAppointments'");
+    }
+
+    public Object approveAppointment(Long id2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'approveAppointment'");
+    }
+
+    public Object bookAppointment(Long studentId, Long timeSlotId) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'bookAppointment'");
+    }
+
+    public TimeSlot getTimeSlot() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getTimeSlot'");
+    }
+
+    public Object getStudent() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getStudent'");
     }
 }
 

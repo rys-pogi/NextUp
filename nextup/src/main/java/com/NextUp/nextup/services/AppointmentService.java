@@ -1,8 +1,10 @@
+package com.NextUp.nextup.services;
+
 import org.springframework.stereotype.Service;
-import org.springframework.stereotype.Component;
-import org.springframework.boot.CommandLineRunner;
+
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -38,7 +40,6 @@ public class AppointmentService {
         timeSlotRepo.save(ts);
         Appointment saved = appointmentRepo.save(appt);
 
-        NotificationService.send(staff, "New appointment request from " + student.getName());
 
         return saved;
     }
@@ -46,10 +47,8 @@ public class AppointmentService {
     public Appointment approveAppointment(Long appointmentId) {
         Appointment appt = appointmentRepo.findById(appointmentId).orElseThrow();
         appt.setStatus("APPROVED");
-        appointmentRepo.save(appt);
+        return appointmentRepo.save(appt);
 
-        notificationService.send(appt.getStudent(), "Your appointment with " + appt.getStaff().getName() + " has been approved.");
-        return appt;
     }
 
     public Appointment declineAppointment(Long appointmentId) {

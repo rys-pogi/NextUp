@@ -1,6 +1,19 @@
-import org.springframework.stereotype.Service;
+package com.NextUp.config;
+
+
+import com.NextUp.nextup.model.Role;
+import com.NextUp.nextup.model.TimeSlot;
+import com.NextUp.nextup.model.User;
+import com.NextUp.nextup.repository.UserRepository;
+import com.NextUp.nextup.services.AppointmentService;
+import com.NextUp.nextup.services.TimeSlotService;
+
 import org.springframework.stereotype.Component;
 import org.springframework.boot.CommandLineRunner;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 

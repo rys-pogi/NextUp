@@ -7,7 +7,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.EnumType;
 
 
-import com.NextUp.nextup.model.Role; 
 
 
 @Entity
@@ -67,5 +66,10 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public static Object findById(Long staffId) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findById'");
     }
 }
