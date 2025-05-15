@@ -1,9 +1,17 @@
 import org.springframework.stereotype.Service;
 import org.springframework.stereotype.Component;
 import org.springframework.boot.CommandLineRunner;
+
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
-
+import com.NextUp.nextup.model.Appointment;
+import com.NextUp.nextup.model.TimeSlot;
+import com.NextUp.nextup.repository.AppointmentRepository;
+import com.NextUp.nextup.repository.TimeSlotRepository;
+import com.NextUp.nextup.repository.UserRepository;
+import com.NextUp.nextup.model.User;
 
 @Service
 public class AppointmentService {
@@ -30,7 +38,7 @@ public class AppointmentService {
         timeSlotRepo.save(ts);
         Appointment saved = appointmentRepo.save(appt);
 
-        notificationService.send(staff, "New appointment request from " + student.getName());
+        NotificationService.send(staff, "New appointment request from " + student.getName());
 
         return saved;
     }

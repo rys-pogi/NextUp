@@ -1,8 +1,15 @@
 import org.springframework.stereotype.Service;
 import org.springframework.stereotype.Component;
 import org.springframework.boot.CommandLineRunner;
+
+import java.util.List;
+
+import javax.management.Notification;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.NextUp.nextup.model.User;
+import  com.NextUp.nextup.repository.NotificationRepository;
 
 @Service
 public class NotificationService {
